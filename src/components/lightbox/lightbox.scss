@@ -1,0 +1,101 @@
+$bg-classroom: #55555E;
+
+.classroom {
+    background-color: $bg-classroom;
+    color:green;
+}
+
+.lightbox{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: #FFF;
+    background-color: rgba(#FFF,6);
+}
+
+.lightbox__image{
+    position: fixed;
+
+}
+.lightbox__close{
+    position : fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: grey;
+    cursor:pointer;
+    transition: transform .5s;
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+.lightbox__btn {
+    position: fixed;
+    top:50%;
+    width: 50px;
+    height:90px;
+    margin-top:-45px;
+    background-color: #eeeeee;
+    cursor: pointer;
+
+}
+
+.lightbox__next{
+    right:20px;
+}
+
+.lightbox__prev{
+    left : 20px;
+}
+
+.lightbox__loading{
+    position:fixed;
+    top:50%;
+    left:50%;
+    width:60px;
+    height:60px;
+    padding:10px;
+    margin-top:-20px;
+    margin-left:-20px;
+    background-color: #444 ;
+    background-color:rgba(#000,.5) ;
+    border-radius: 60px;
+    &:after{
+        content:'';
+        display:block;
+        width:40px;
+        height:40px;
+        background-color: #FFF ;
+        border-radius: 40px;
+        animation: lightbox-loading .5s ease infinite;
+    } 
+        
+}
+.lightbox-fade-enter-active ,.lightbox-fade-leave-active {
+    transition: opacity .9s;
+}
+.lightbox-fade-enter ,.lightbox-fade-leave-active {
+    opacity : 0;
+}
+
+
+
+@keyframes lightbox-loading {
+    0% {
+        opacity: 0.5;
+        transform:scale(.75);
+    }
+    50% {
+        opacity: 1;
+        transform:scale(1);
+    }
+    100% {
+        opacity: 0.5;
+        transform:scale(.75);
+    }
+}
+
